@@ -13,7 +13,7 @@ con.query(sql, params, (error, results, fields) => {
     results.forEach((user, index) => {
         console.log(`${user.id} : ${user.email}`);
     })
-})
+});
 
 //users から id で検索
 params = { 'id': 5 };
@@ -25,7 +25,7 @@ con.query(sql, params, (error, results, fields) => {
     } else {
         console.log('Not found user.');
     }
-})
+});
 
 //DB接続終了
 con.end();

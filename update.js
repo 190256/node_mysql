@@ -5,12 +5,16 @@ const db = require('./lib/db');
 const con = db.connect();
 
 //users から id で検索
-params = [ { 'email': 'tanaka@test.com' } , { 'email': 'tanaka@example.com' }];
-sql = 'UPDATE users SET ? WHERE ?;';
+let sql = "UPDATE users SET ? WHERE ?;";
+let params = [
+    { email: "test@test.com" },
+    { id: 1 },
+];
 con.query(sql, params, (err, results) => {
     if (err) throw err;
-    console.log('update success.');
-})
+    console.log(sql);
+    console.log(result);
+});
 
 //DB接続終了
 con.end();
